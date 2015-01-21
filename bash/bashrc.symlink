@@ -18,6 +18,7 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome-beta/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 export LESS='-F -X -R'
 export LESSOPEN='|~/.lessfilter %s'
+export GOPATH=$HOME/go
 
 # Boot2docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
@@ -35,6 +36,7 @@ PATH=./node_modules/.bin:${PATH}
 PATH=${HOME}/bin:${PATH}
 PATH=$(brew --prefix)/bin:${PATH}
 PATH=$(brew --prefix)/sbin:${PATH}
+PATH=${GOPATH}/bin:${PATH}
 PATH=${DOTFILES}/bin:${PATH}
 PATH=${HOME}/.jenv/bin:${PATH}
 
