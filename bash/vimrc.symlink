@@ -77,8 +77,8 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"Always show current position
-set ruler
+" Always show current position
+" set ruler
 
 " Height of the command bar
 set cmdheight=2
@@ -110,6 +110,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -126,9 +127,12 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-" let g:rehash256 = 1
+let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
+
+hi Normal guibg=NONE ctermbg=NONE
+hi Visual ctermbg=20
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -244,10 +248,10 @@ set viminfo^=%
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=2
+" set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
