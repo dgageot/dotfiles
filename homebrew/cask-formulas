@@ -1,9 +1,7 @@
 caskroom/versions/java7
 colloquy
-dropbox
 eclipse-ide
 firefox
-github
 gitx
 google-chrome
 google-chrome-beta
@@ -18,7 +16,5 @@ pacifist
 skype
 slate
 textmate
-transmission
-vagrant
 vlc
 vmware-fusion6
