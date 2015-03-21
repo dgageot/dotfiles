@@ -3,11 +3,9 @@ ansible
 bash-completion
 git
 gnupg
-ioke
 jenv
 maven
 md5sha1sum
-mosh
 most
 node
 parallel
