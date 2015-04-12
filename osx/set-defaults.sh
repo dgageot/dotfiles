@@ -184,6 +184,9 @@ sudo touch /Private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /Private/var/vm/sleepimage
 
+# sound when charging
+defaults write com.apple.PowerChime ChimeOnAllHardware -bool true
+
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
