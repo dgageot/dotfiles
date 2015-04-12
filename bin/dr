@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMMAND="docker run --rm -ti $(whoami)/$(basename $(pwd)) $@"
+COMMAND="docker run --rm -ti $@ $(whoami)/$(basename $(pwd))"
 
 echo ${COMMAND}
 echo
