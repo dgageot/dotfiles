@@ -37,6 +37,7 @@ PATH=$(brew --prefix)/sbin:${PATH}
 PATH=${GOPATH}/bin:${PATH}
 PATH=${DOTFILES}/bin:${PATH}
 PATH=${HOME}/.jenv/bin:${PATH}
+PATH=${HOME}/bin/go_appengine:${PATH}
 
 [ -f $(brew --prefix)/bin/jenv ] && eval "$(jenv init -)"
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
