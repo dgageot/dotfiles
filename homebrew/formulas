@@ -1,9 +1,6 @@
 ack
 ansible
 bash-completion
-docker-compose
-docker-machine
-docker-swarm
 git
 gnupg
 jenv
