@@ -28,7 +28,7 @@ for config_file in ${DOTFILES}/**/*.bashrc; do
 done
 unset config_file
 
-CDPATH=:${HOME}:${HOME}/src
+CDPATH=:${HOME}:${HOME}/src:${GOPATH}/src/github.com/$(whoami)
 
 PATH=./node_modules/.bin:${PATH}
 PATH=${HOME}/bin:${PATH}
