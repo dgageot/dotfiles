@@ -2,6 +2,7 @@ ack
 ansible
 bash-completion
 git
+golang
 gnupg
 jenv
 maven
