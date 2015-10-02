@@ -190,10 +190,3 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
-# Scripts
-# osascript scripts/contacts.scpt > /dev/null
-
-# Restart applications
-killall Finder Contacts
-
-
