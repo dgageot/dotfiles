@@ -143,6 +143,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
+# Zoom should use nearest neighbor instead of smoothing.
+defaults write com.apple.universalaccess 'closeViewSmoothImages' -bool false
+
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
