@@ -11,3 +11,11 @@ else
   # Set environment variables
   eval "$(docker-machine env default)"
 fi
+
+# Make sure bash completion works
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  if [ ! -f $(brew --prefix)/etc/bash_completion.d/docker ]; then
+    echo "Download docker bash completion"
+    curl -XGET https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > $(brew --prefix)/etc/bash_completion.d/docker
+  fi
+fi
