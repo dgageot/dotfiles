@@ -19,9 +19,6 @@ export LESS='-F -X -R'
 export LESSOPEN='|~/.lessfilter %s'
 export GOPATH=$HOME/go
 
-# Boot2docker
-eval "$(docker-machine env default)"
-
 for config_file in ${DOTFILES}/**/*.bashrc; do
   source $config_file
 done
