@@ -8,3 +8,4 @@ alias amend='git amend'
 alias got='git'
 alias mci='mvn clean install'
 alias more='less'
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
