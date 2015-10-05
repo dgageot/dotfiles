@@ -1,6 +1,6 @@
 #!/bin/sh
 
-command -v gcloud >/dev/null 2>&1
+command -v ~/google-cloud-sdk/bin/gcloud >/dev/null 2>&1
 if [ "$?" -ne "0" ]; then
   echo "Install gcloud"
   curl https://sdk.cloud.google.com | bash
