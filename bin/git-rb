@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 
+REMOTE=${1:-origin}
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 if [ $? -ne 0 ]; then
     echo "\033[0;31mNot a git repository\033[0m"
@@ -12,6 +13,6 @@ if [ ${BRANCH} == "HEAD" ]; then
 fi
 
 git wip
-git rebase -i --autosquash origin/${BRANCH}
+git rebase -i --autosquash ${REMOTE}/${BRANCH}
 git unwip
-git heads
+git heads ${REMOTE}

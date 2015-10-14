@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 
+REMOTE=${1:-origin}
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 if [ $? -ne 0 ]; then
     echo "\033[0;31mNot a git repository\033[0m"
@@ -11,4 +12,4 @@ if [ ${BRANCH} == "HEAD" ]; then
     exit 1;
 fi
 
-git log origin/${BRANCH}.. --format="%Cred%h%Creset%x09%C(yellow)%an%Creset%x09%H%x09%Cgreen%f%Creset" | git name-rev --stdin --always --name-only
+git log ${REMOTE}/${BRANCH}.. --format="%Cred%h%Creset%x09%C(yellow)%an%Creset%x09%H%x09%Cgreen%f%Creset" | git name-rev --stdin --always --name-only
