@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias vi='vim'
 alias ls='ls -GFlh'
 alias gzip=pigz
 alias ij='open -b com.jetbrains.intellij'
