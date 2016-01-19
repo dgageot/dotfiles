@@ -14,4 +14,4 @@ fi
 export GOOGLE_PROJECT="code-story-blog"
 export GOOGLE_ZONE="europe-west1-d"
 export GOOGLE_DISK_SIZE="100"
-export GOOGLE_MACHINE_IMAGE="https://www.googleapis.com/compute/v1/projects/code-story-blog/global/images/ubuntu-aufs"
+export GOOGLE_MACHINE_IMAGE="https://www.googleapis.com/compute/v1/projects/code-story-blog/global/images/docker"
