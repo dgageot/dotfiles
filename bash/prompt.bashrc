@@ -47,7 +47,10 @@ function git_dirty_flag {
 function prompt_func() {
     previous_return_value=$?;
     prompt="${WHITE}\w${LIGHT_GREEN}$(parse_git_branch)${COLOR_NONE} "
-		machine="${LIGHT_RED}$(__docker_machine_ps1 "🐳  -> %s ")"
+
+    if [ -n "$(type -t __docker_machine_ps1)" ] && [ "$(type -t __docker_machine_ps1)" = function ]; then
+		  machine="${LIGHT_RED}$(__docker_machine_ps1 "🐳  -> %s ")"
+    fi
 
     if test $previous_return_value -eq 0
     then
