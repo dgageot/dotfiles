@@ -1,4 +1,4 @@
-#!/bin/sh
-#
+#!/bin/bash
 
-git add --all .; git commit -m 'wip'
+git add --all .
+git commit -m 'wip'

@@ -1,15 +1,14 @@
-#!/bin/sh
-#
+#!/bin/bash
 
 REMOTE=${1:-origin}
-BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-if [ $? -ne 0 ]; then
+BRANCH=$(git name-rev --name-only HEAD 2>/dev/null)
+if [[ $? -ne 0 ]]; then
     echo "\033[0;31mNot a git repository\033[0m"
-    exit 1;
+    exit 1
 fi
-if [ ${BRANCH} == "HEAD" ]; then
+if [[ "${BRANCH}" == "HEAD" ]]; then
     echo "\033[0;31mNot currently on any branch\033[0m"
-    exit 1;
+    exit 1
 fi
 
 git wip
