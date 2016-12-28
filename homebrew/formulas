@@ -1,15 +1,10 @@
-ack
-ansible
 bash-completion
 git
 golang
 gnupg
-jenv
 jq
-maven
 md5sha1sum
 most
-node
 parallel
 pigz
 pngcrush
