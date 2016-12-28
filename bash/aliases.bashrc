@@ -9,6 +9,7 @@ alias got='git'
 alias mci='mvn clean install'
 alias more='less'
 alias dm='docker-machine'
+alias gogo='CDPATH=~/go/src/github.com/docker cd'
 
 # OSX only
 alias ij='open -b com.jetbrains.intellij'
