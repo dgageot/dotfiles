@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 JAVA_FOLDER=~/java
 JENV_HOME=~/.jenv

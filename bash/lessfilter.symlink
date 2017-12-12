@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 case "$1" in
     *.awk|*.groff|*.java|*.js|*.m4|*.php|*.pl|*.pm|*.pod|*.sh|\

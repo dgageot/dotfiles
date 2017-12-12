@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 LOCATION=$(pwd)
 REMOTE=${1:-origin}
@@ -21,7 +21,7 @@ function exit_fail {
   command -v growlnotify >/dev/null 2>&1 && growlnotify --image ${DOTFILES}/notify/fail.png "${REPO_NAME}" -m "${1}"
   exit 1
 }
- 
+
 function exit_ok {
   echo "${1}"
   command -v growlnotify >/dev/null 2>&1 && growlnotify --image ${DOTFILES}/notify/success.png "${REPO_NAME}" -m "${1}"

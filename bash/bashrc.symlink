@@ -13,19 +13,18 @@ export LC_ALL="en_US.UTF-8"
 export CLICOLOR=1
 export DOTFILES="${HOME}/src/dotfiles"
 export MAVEN_OPTS="-Xmx4G"
-export MANPAGER="$(brew --prefix)/bin/most -s"
-export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 export LESS='-F -X -R'
 export LESSOPEN='|~/.lessfilter %s'
-export GOPATH=$HOME/go
-export JAVA_HOME=/Users/dgageot/java/java8
+export GOPATH=${HOME}/go
+export JAVA_HOME=${HOME}/java/java8
+[ -f $(brew --prefix)/bin/most ] && export MANPAGER="$(brew --prefix)/bin/most -s"
 
 for config_file in ${DOTFILES}/**/*.bashrc; do
   source $config_file
 done
 unset config_file
 
-CDPATH=:${HOME}:${HOME}/src:${GOPATH}/src/github.com
+CDPATH=:${HOME}:${HOME}/src
 
 PATH=./node_modules/.bin:${PATH}
 PATH=${HOME}/bin:${PATH}
@@ -35,7 +34,7 @@ PATH=${GOPATH}/bin:${PATH}
 PATH=${DOTFILES}/bin:${PATH}
 PATH=${HOME}/.jenv/bin:${PATH}
 PATH=${HOME}/bin/go_appengine:${PATH}
-PATH=~/Library/Python/2.7/bin:${PATH}
+PATH=${HOME}/Library/Python/2.7/bin:${PATH}
 PATH=${JAVA_HOME}/bin:${PATH}
 
 [ -f $(brew --prefix)/bin/jenv ] && eval "$(jenv init -)"

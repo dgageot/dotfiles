@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 REMOTE=${1:-origin}
 BRANCH=$(git name-rev --name-only HEAD 2>/dev/null)

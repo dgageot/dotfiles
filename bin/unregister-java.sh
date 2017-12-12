@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 JENV_HOME=~/.jenv
 JENV=$(brew --prefix)/bin/jenv

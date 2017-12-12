@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 command -v ~/google-cloud-sdk/bin/gcloud >/dev/null 2>&1
 if [ "$?" -ne "0" ]; then

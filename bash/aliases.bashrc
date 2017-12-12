@@ -1,14 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 alias vi='vim'
 alias ls='ls -GFlh'
 alias gzip=pigz
 alias wip='git wip'
-alias amend='git amend'
 alias got='git'
 alias mci='mvn clean install'
 alias more='less'
-alias dm='docker-machine'
 alias gogo='CDPATH=~/go/src/github.com cd'
 
 # OSX only

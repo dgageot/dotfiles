@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 shopt -s cdspell # Pour que bash corrige automatiquement les fautes de frappes ex: cd ~/fiml sera remplacé par cd ~/film
 shopt -s checkwinsize # Pour que bash vérifie la taille de la fenêtre après chaque commande

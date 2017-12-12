@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #
 # Sets reasonable OS X defaults.
 #
@@ -156,10 +156,10 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-# Disable the “reopen windows when logging back in” option 
-# This works, although the checkbox will still appear to be checked. 
-defaults write com.apple.loginwindow TALLogoutSavesState -bool false 
-defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false 
+# Disable the “reopen windows when logging back in” option
+# This works, although the checkbox will still appear to be checked.
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -192,4 +192,3 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
-
