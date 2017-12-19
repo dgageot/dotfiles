@@ -14,13 +14,13 @@ LIGHT_GREEN="\[\033[1;32m\]"
  COLOR_NONE="\[\e[0m\]"
 
 function parse_git_branch {
-  git rev-parse --git-dir &> /dev/null
-  git_status="$(git status 2> /dev/null)"
+  git rev-parse --git-dir &>/dev/null
+  git_status="$(git status 2>/dev/null)"
   branch_pattern="^On branch ([^${IFS}]*)"
   remote_pattern="Your branch is (.*) of"
   diverge_pattern="Your branch and (.*) have diverged"
 
-  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
+  if [[ ! ${git_status}} =~ "working tree clean" ]]; then
     state="${RED}⚡"
   fi
   # add an else if or two here if you want to get more specific
@@ -40,23 +40,15 @@ function parse_git_branch {
   fi
 }
 
-function git_dirty_flag {
-  git status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "⚡"}'
-}
-
 function prompt_func() {
     previous_return_value=$?;
     prompt="${WHITE}\w${LIGHT_GREEN}$(parse_git_branch)${COLOR_NONE} "
 
-    if [ -n "$(type -t __docker_machine_ps1)" ] && [ "$(type -t __docker_machine_ps1)" = function ]; then
-		  machine="${LIGHT_RED}$(__docker_machine_ps1 "🐳  -> %s ")"
-    fi
-
     if test $previous_return_value -eq 0
     then
-        PS1="${prompt}${machine}${WHITE}>${COLOR_NONE} "
+        PS1="${prompt}${WHITE}>${COLOR_NONE} "
     else
-        PS1="${prompt}${machine}${WHITE}>${COLOR_NONE} "
+        PS1="${prompt}${WHITE}>${COLOR_NONE} "
     fi
 }
 
