@@ -15,29 +15,7 @@ fi
 brew update
 brew doctor
 brew upgrade
-
-if [[ $(brew tap) != *cask* ]]; then
-	brew tap phinze/homebrew-cask
-	brew install brew-cask
-fi
-
-# Install Missing Homebrew formulas
-#
-brew list > /tmp/installed
-TO_INSTALL=$(comm -13 /tmp/installed formulas)
-
-if [ ! -z "${TO_INSTALL}" ]; then
-	brew install ${TO_INSTALL}
-fi
-
-# Install Missing Cask formulas
-#
-brew cask list > /tmp/installed
-TO_INSTALL=$(comm -13 /tmp/installed cask-formulas)
-
-if [ ! -z "${TO_INSTALL}" ]; then
-	brew cask install ${TO_INSTALL}
-fi
+brew bundle
 
 # Install terminal tools
 #

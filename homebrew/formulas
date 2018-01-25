@@ -1,16 +1,2 @@
-bash-completion
 git
 golang
-gnupg
-jq
-md5sha1sum
-most
-parallel
-pigz
-pngcrush
-ssh-copy-id
-the_silver_searcher
-tmux
-tree
-watch
-wget

@@ -16,8 +16,16 @@ export MAVEN_OPTS="-Xmx4G"
 export LESS='-F -X -R'
 export LESSOPEN='|~/.lessfilter %s'
 export GOPATH=${HOME}/go
-export JAVA_HOME=${HOME}/java/java8
-[ -f $(brew --prefix)/bin/most ] && export MANPAGER="$(brew --prefix)/bin/most -s"
+export GOBIN=${GOPATH}/bin
+export ISTIO=${GOPATH}/src/istio.io
+export HUB="docker.io/${USER}"
+export TAG=${USER}
+export GITHUB_USER=${USER}
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+export EDITOR=vi
+export HOMEBREW_NO_ANALYTICS=1
+export SKAFFOLD_UPDATE_CHECK=0
+export SKAFFOLD_WATCH_POLL_INTERVAL=500
 
 for config_file in ${DOTFILES}/**/*.bashrc; do
   source $config_file
@@ -26,10 +34,11 @@ unset config_file
 
 CDPATH=:${HOME}:${HOME}/src
 
+BREW_PREFIX=$(${HOME}/homebrew/bin/brew --prefix)
 PATH=./node_modules/.bin:${PATH}
-PATH=${HOME}/bin:${PATH}
-PATH=$(brew --prefix)/bin:${PATH}
-PATH=$(brew --prefix)/sbin:${PATH}
+PATH=${HOME}/bin:${HOME}/homebrew/bin:${PATH}
+PATH=${BREW_PREFIX}/bin:${PATH}
+PATH=${BREW_PREFIX}/sbin:${PATH}
 PATH=${GOPATH}/bin:${PATH}
 PATH=${DOTFILES}/bin:${PATH}
 PATH=${HOME}/.jenv/bin:${PATH}
@@ -37,5 +46,16 @@ PATH=${HOME}/bin/go_appengine:${PATH}
 PATH=${HOME}/Library/Python/2.7/bin:${PATH}
 PATH=${JAVA_HOME}/bin:${PATH}
 
-[ -f $(brew --prefix)/bin/jenv ] && eval "$(jenv init -)"
-[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+[ -f ${BREW_PREFIX}/bin/most ] && export MANPAGER="${BREW_PREFIX}/bin/most -s"
+[ -f ${BREW_PREFIX}/etc/bash_completion ] && . ${BREW_PREFIX}/etc/bash_completion
+
+export THEME=$HOME/.bash/themes/agnoster-bash/agnoster.bash
+if [[ -f $THEME ]]; then
+    export DEFAULT_USER=`whoami`
+    source $THEME
+fi
+
+KUBE_PS1_PREFIX=""
+KUBE_PS1_SEPARATOR=" "
+KUBE_PS1_SUFFIX=""
+DEBUG= source $HOME/src/kube-ps1/kube-ps1.sh

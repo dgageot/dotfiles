@@ -30,6 +30,7 @@
 	lg = log --graph --branches --oneline --graph --decorate
 	co = checkout
 	lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+	review = push origin HEAD:refs/for/master
 
 [push]
 	default = simple
@@ -48,3 +49,5 @@
 
 [status]
 	showUntrackedFiles = all
+[url "git@github.com:"]
+	insteadOf = https://github.com/

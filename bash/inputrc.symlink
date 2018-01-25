@@ -6,8 +6,12 @@
 # the subset of the history starting with that text
 # is searched (like 4dos for e.g.).
 # Note to get rid of a line just Ctrl-C
+
 "\e[B": history-search-forward
 "\e[A": history-search-backward
+"^[b": backward-word
+"^[f": forward-word
+"\ek": clear-screen 
 
 $if Bash
   set show-all-if-ambiguous on

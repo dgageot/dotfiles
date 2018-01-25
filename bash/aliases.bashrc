@@ -4,8 +4,6 @@ alias vi='vim'
 alias ls='ls -GFlh'
 alias gzip=pigz
 alias wip='git wip'
-alias got='git'
-alias mci='mvn clean install'
 alias more='less'
 alias gogo='CDPATH=~/go/src/github.com cd'
 
