@@ -1,12 +1,16 @@
 [user]
-	email = david@gageot.net
+	email = david.gageot@doctolib.com
 	name = David Gageot
+	signingkey = CDF3F060FC070737D8986A3A9BCC823E85DD4688
+
+[commit]
+	gpgsign = true
 
 [github]
 	user = dgageot
 
 [core]
-	editor = mate -wl1
+	#editor = mate -wl1
 	excludesfile = ~/.gitignore
 
 [hub]
@@ -30,10 +34,9 @@
 	lg = log --graph --branches --oneline --graph --decorate
 	co = checkout
 	lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
-	review = push origin HEAD:refs/for/master
 
 [push]
-	default = simple
+	default = current
 
 [help]
 	autocorrect = 10
@@ -49,5 +52,9 @@
 
 [status]
 	showUntrackedFiles = all
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
