@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 git add --all
-git commit -m 'wip'
+git commit --no-verify -m 'wip'

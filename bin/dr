@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE="$(whoami)/$(basename $(pwd))"
+IMAGE="dgageot/$(basename $(pwd))"
 PARAMS=""
 
 # Find the ports

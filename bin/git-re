@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+BRANCH="${1}"
+if [[ "${BRANCH}" == "" ]]; then
+    BRANCH=$(git branch --show-current)
+fi
+
+git fetch origin
+git rebase origin/master "${BRANCH}"
+git push --force-with-lease origin "${BRANCH}"

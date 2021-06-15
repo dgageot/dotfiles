@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COMMAND="docker build -t $(whoami)/$(basename $(pwd)) ."
+COMMAND="docker build -t dgageot/$(basename $(pwd)) ."
 
 echo ${COMMAND}
 echo
